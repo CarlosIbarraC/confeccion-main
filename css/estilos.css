@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #303030;
+    font-family: 'Roboto', sans-serif;
+    /* line-height: 18px; */
+
+}
+a{
+    text-decoration: none;
+    color: #666;
+}
+.btn-menu{
+    display: block;
+    padding: 20px;
+    background: #242424;
+    color:#1d544e;
+}
+.btn-menu .icono{
+    float: right;
+    display: none;
+}
+.contenedor-menu{
+    width: 20%;
+    min-width: 250px;
+    /* margin: 50px; */
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    line-height: 18px;
+    background: #242424;
+    
+}
+.contenedor-menu .menu{
+    width: 100%;
+    
+}
+.contenedor-menu ul{
+    list-style: none;
+}
+.contenedor-menu .menu li a{
+    color: #1d544e;
+    display: block;
+    padding: 15px 20px;
+    background: #242424; 
+}
+.contenedor-menu .menu li a:hover{
+    background: #141414;
+    color: #83641d;
+}
+.contenedor-menu .menu .icono{
+    font-size: 12px;
+    line-height: 18px;
+}
+.contenedor-menu .menu .icono.izquierda{
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.contenedor-menu .menu .icono.derecha{
+    float: right;
+    margin-left: 10px;
+}
+.contenedor-menu .menu ul{
+    display: none;
+    margin: 0px;
+}
+.contenedor-menu .menu ul li a{
+    background: #272727;
+}
+.contenedor-menu .menu .activo > a{
+    background:#444444 ;
+    color: #0ee2c9;
+}
+.contenedor-menu .menu  li.total-alto a{
+   height: 60vh;
+  
+}
+.contenedor-menu .menu  li.total-alto a:hover{
+    background: #242424;
+ }
+ .contenedor-menu .menu ul li.fija a{
+     position: fixed;
+     
+ }
+ .contenedor{
+     height: 80px;
+     background-color: #272727;
+ }
+ .loader {
+	margin: auto;
+	display: none;
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+}
+
+.loader.active {
+	display: block;
+}
+.modal-content{
+    background-color: #2a2b3c !important;
+    color: antiquewhite !important;
+} 
+select option{
+    background-color:#2a2b3c ;
+    color: dimgray;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@media screen and (max-width: 450px){
+    /* body{
+       padding-top: 80px;  
+      
+    } */
+    .contenedor-menu{
+        margin: 0;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+    }
+    .btn-menu .icono{
+        display: block;
+    }
+    .contenedor-menu .menu{
+        display: none;
+    }
+    
+}
