@@ -360,30 +360,40 @@ if((!isset($usuario))&&(!isset($supervisor))){
       </div>
     </div>
 
-    <div><button class="btn btn-sm btn-info p-a" id="btn1" onClick="selectChat(this)">
-        1
-      </button>
-      <button class="btn btn-sm btn-info p-a" id="btn2" onClick="selectChat(this)">2
-
-      </button>
-      <button class="btn btn-sm btn-info p-a" id="btn3" onClick="selectChat(this)">3
-
-      </button>
-      <button class="btn btn-sm btn-info p-a" id="btn4" onClick="selectChat(this)">4
-
-      </button>
-      <button class="btn btn-sm btn-info p-a" id="btn5" onClick="selectChat(this)">5
-
-      </button>
-      <button class="btn btn-sm btn-info p-a" id="btn6" onClick="selectChat(this)">6
-
-      </button>
-      <button class="btn btn-sm btn-info p-a" id="todos" onClick="selectChat(this)">todos
-
-      </button>
-    
+    <div id="btnChat">
     </div>
+    <div class="row col-12 mx-0 p-0 h-100"style="heigth:500px">
+      <div class="col-6 h-100" >
+        <div class="box p-a h-100" >
+          <div class="pull-left m-r p-2">
+            <span class="w-32 rounded pink-200">
+              <i class="material-icons">&#xe0c9;</i>
+            </span><span class="input-group-text"> Enviar Mensaje </span>
+          </div>
+          <div class=" m-r p-2">
+            <button class="btn btn-xs indigo-400" type="button" id="enviarChat">
+              <i class="material-icons">&#xe905;</i> Enviar
+            </button>
+          </div>
+          <textarea class="form-control" aria-label="With textarea" row="4" cols="50"
+            id="chat"></textarea>
+        </div>
+      </div>
+      <div class="col-6 ">
+        <div class="box p-a">
+          <div class="pull-left m-r p-2">
+            <span class="w-32 rounded green-200">
+              <i class="material-icons">&#xe0c9;</i>
+            </span><span class="input-group-text"> Chat</span>
+          </div>
+          <div class="input-group">
 
+            <textarea class="form-control" aria-label="With textarea" row="4" cols="50"
+              id="chatTablero<?php echo $n; ?>" readonly></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
   <!-- build:js scripts/app.html.js -->
@@ -418,30 +428,27 @@ if((!isset($usuario))&&(!isset($supervisor))){
   <!-- endbuild -->
 
   <script>
-   
     $(document).ready(function () {
       setTimeout(llenarCuadroPrincipal(), 500);
-      fechaHoy();     
+      fechaHoy();
 
     });
-    
-    var list="";
-    function selectChat(dato) {
-      if((dato).id=="todos"){
-        console.log((dato).id);
-        listok="#btn1,#btn2,#btn3,#btn4,#btn5,#btn6";
-        console.log(listok);
-        $(listok).css("background","blue")
-      }else{
-    console.log((dato).id);
-     list=list+"#"+(dato).id+",";
-     listok = list.substring(0, list.length - 1);
-      console.log(listok); 
-      $(listok).css("background","red")
+ 
+    function botonChat(params) {
+      var nboton = params;
+      var boton = $('<button/>', {
+        'type': 'button',
+        'class': 'editar edit-modal btn btn-info m-a',
+        'id': nboton,
+        'onclick':'mensajes(par)',
+        'html': '<span class="fa fa-edit"></span><span class="hidden-xs"></span>',
 
-      }
-      
-      
+      });
+      $('#btnChat').append(boton.prop('outerHTML'));
+      $("#" + nboton).html(nboton);
+      //$("#BotonesChat").prop("id",nboton);     
+
+      console.log(boton);
     }
 
     function recargar() {
@@ -454,10 +461,13 @@ if((!isset($usuario))&&(!isset($supervisor))){
       //var fechaDia=fecha.toISOString().slice(0, 10);
       $('#fechaC').text(fecha.getDate() + '/' + (fecha.getMonth() + 1) + '/' + (fecha.getFullYear()));
     }
-  </script>
+   
+     </script>
 
 
   <script>
+    console.log($("#opnum0").text()) ;
+
     function cerrarLogin() {
 
       estado = "<?php echo $usuario?> ";
@@ -536,7 +546,7 @@ if((!isset($usuario))&&(!isset($supervisor))){
               $("#TANc").text(TotalNc);
               $("#TAcOtras").text(AcuOtras);
               $("#TPAcOtras").text(PorOtras + " %");
-
+              botonChat(data[index].op_num);
             }
 
 
@@ -548,5 +558,45 @@ if((!isset($usuario))&&(!isset($supervisor))){
       });
 
     }
+
+    
+   console.log( $("#btnChat button:nth-child(2)").text());
+
+    /* $("#btnchat").click(function chateo (e) {  
+          e.preventDefault();
+          var numeroOp = $("#tablero<?php echo $n; ?>-OP").text();
+          var usuario="ing";
+          var hora= new Date();
+          hora=hora.getHours()+":"+hora.getMinutes();
+          var mensaje=$("#chat<?php echo $n; ?>").val();
+          console.log(numeroOp,usuario,hora,mensaje);
+           $.ajax({
+              method: "POST",
+              url: "chatDatos.php",
+              data: {
+                numeroOp: numeroOp,
+                usuario: usuario,
+                hora: hora,
+                mensaje:mensaje
+              }
+            })
+            .done(function (msg) {
+            
+              for (var i = 0; i < msg.length; i++) {
+            console.log(msg[i].numeroOpChat + ' ' + msg[i].mensajeChat);
+             
+            
+             contar.push([msg[i].horaChat +" -- "+ msg[i].mensajeChat]+"\n");
+            
+             $('#chatTablero'+<?php echo $n; ?>).html(contar);
+             $('#chatTablero'+<?php echo $n; ?>).css({"color":"#F999EC"});
+             $("#chat<?php echo $n; ?>").val(" "); 
+             var altura = $("#chatTablero"+<?php echo $n; ?>).prop("scrollHeight");
+             $("#chatTablero"+<?php echo $n; ?>).scrollTop(altura);
+              }
+         
+            }); 
+         
+                }) */
   </script>
 </body>
