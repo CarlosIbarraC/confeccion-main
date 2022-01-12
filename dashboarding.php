@@ -19,27 +19,30 @@ if((!isset($usuario))&&(!isset($supervisor))){
   <meta name="description" content="Admin, Dashboard, Bootstrap, Bootstrap 4, Angular, AngularJS" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+ 
   <!-- for ios 7 style, multi-resolution icon of 152x152 -->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
-  <link rel="apple-touch-icon" href="../assets/images/logo.png">
+  <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">  
   <meta name="apple-mobile-web-app-title" content="Flatkit">
+  <script src="libs/jquery/jquery/dist/jquery.js"></script>
+  <script src="libs/jquery/jquery-pjax/jquery.pjax.js"></script>
+  <script src="scripts/ajax.js"></script>
   <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
   <meta name="mobile-web-app-capable" content="yes">
-  <link rel="shortcut icon" sizes="196x196" href="../assets/images/logo.png">
-
+  <link rel="shortcut icon" sizes="196x196" href="assets/images/logo.png">
+ <link rel="apple-touch-icon" href="assets/images/logo.svgg"> 
   <!-- style -->
-  <link rel="stylesheet" href="../assets/animate.css/animate.min.css" type="text/css" />
-  <link rel="stylesheet" href="../assets/glyphicons/glyphicons.css" type="text/css" />
-  <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css" type="text/css" />
-  <link rel="stylesheet" href="../assets/material-design-icons/material-design-icons.css" type="text/css" />
+  
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/glyphicons/glyphicons.css" type="text/css" />
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/material-design-icons/material-design-icons.css" type="text/css" />
 
-  <link rel="stylesheet" href="../assets/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
-  <!-- build:css ../assets/styles/app.min.css -->
-  <link rel="stylesheet" href="../assets/styles/app.css" type="text/css" />
+  <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+  <!-- build:css assets/styles/app.min.css -->
+  <link rel="stylesheet" href="assets/styles/app.css" type="text/css" />
   <!-- endbuild -->
-  <link rel="stylesheet" href="../assets/styles/font.css" type="text/css" />
+  <link rel="stylesheet" href="assets/styles/font.css" type="text/css" />
 
 </head>
 
@@ -117,8 +120,8 @@ if((!isset($usuario))&&(!isset($supervisor))){
               </td>
               <td>
                 <h5 class=" text-xs"><span class="mb-1">
-                    <div id="Und0">--</div>
-                  </span><br> <span class="text-sm text-accent " id="Prod0">--</span></h5>
+                    <div id="Prod0">--</div>
+                  </span><br> <span class="text-sm text-accent " id="Und0">--</span></h5>
               </td>
 
               <td class="text-success">
@@ -156,8 +159,8 @@ if((!isset($usuario))&&(!isset($supervisor))){
               </td>
               <td>
                 <h5 class="text-info text-xs"><span class="mb-1">
-                    <div id="Und1">--</div>
-                  </span><br> <span class="text-accent" id="Prod1">--</span></h5>
+                    <div id="Prod1">--</div>
+                  </span><br> <span class="text-accent" id="Und1">--</span></h5>
               </td>
 
               <td class="text-success">
@@ -195,8 +198,8 @@ if((!isset($usuario))&&(!isset($supervisor))){
               </td>
               <td>
                 <h5 class=" text-xs"><span class="mb-1">
-                    <div id="Und2">--</div>
-                  </span><br> <span class="text-sm text-accent " id="Prod2">--</span></h5>
+                    <div id="Prod2">--</div>
+                  </span><br> <span class="text-sm text-accent " id="Und2">--</span></h5>
               </td>
 
               <td class="text-success">
@@ -234,8 +237,8 @@ if((!isset($usuario))&&(!isset($supervisor))){
               </td>
               <td>
                 <h5 class="text-info text-xs"><span class="mb-1">
-                    <div id="Und3">--</div>
-                  </span><br> <span class="text-accent" id="Prod3">--</span></h5>
+                    <div id="Prod3">--</div>
+                  </span><br> <span class="text-accent" id="Und3">--</span></h5>
               </td>
 
               <td class="text-success">
@@ -273,8 +276,8 @@ if((!isset($usuario))&&(!isset($supervisor))){
               </td>
               <td>
                 <h5 class=" text-xs"><span class="mb-1">
-                    <div id="Und4">--</div>
-                  </span><br> <span class="text-accent " id="Prod4">--</span></h5>
+                    <div id="Prod4">--</div>
+                  </span><br> <span class="text-accent " id="Und4">--</span></h5>
               </td>
 
               <td class="text-success">
@@ -312,8 +315,8 @@ if((!isset($usuario))&&(!isset($supervisor))){
               </td>
               <td>
                 <h5 class="text-info text-xs"><span class="mb-1">
-                    <div id="Und5">--</div>
-                  </span><br> <span class="text-accent" id="Prod5">--</span></h5>
+                    <div id="Prod5">--</div>
+                  </span><br> <span class="text-accent" id="Und5">--</span></h5>
               </td>
 
               <td class="text-success">
@@ -363,7 +366,7 @@ if((!isset($usuario))&&(!isset($supervisor))){
     <div id="btnChat">
     </div>
     <div class="row col-12 mx-0 p-0 h-100"style="heigth:500px">
-      <div class="col-6 h-100" >
+      <div class="col-12 col-sm-6 h-100" >
         <div class="box p-a h-100" >
           <div class="pull-left m-r p-2">
             <span class="w-32 rounded pink-200">
@@ -379,12 +382,15 @@ if((!isset($usuario))&&(!isset($supervisor))){
             id="chat"></textarea>
         </div>
       </div>
-      <div class="col-6 ">
+      <div class="col-sm-6 col-12">
         <div class="box p-a">
           <div class="pull-left m-r p-2">
-            <span class="w-32 rounded green-200">
+            <span class="w-32 rounded green-200" id="bell">
               <i class="material-icons">&#xe0c9;</i>
             </span><span class="input-group-text"> Chat</span>
+            <span class="w-32 rounded green-200">
+              <i class="material-icons">&#xe003;</i>
+            </span>
           </div>
           <div class="input-group">
 
@@ -396,19 +402,26 @@ if((!isset($usuario))&&(!isset($supervisor))){
     </div>
 
   </div>
+  <?php 
+ require('switchColor.php');
+ ?>
   <!-- build:js scripts/app.html.js -->
   <!-- jQuery -->
-  <script src="../libs/jquery/jquery/dist/jquery.js"></script>
+   <!-- ajax -->
+   
+  <!-- endbuild -->
+  <script src="libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+  <script src="libs/jquery/PACE/pace.min.js"></script>
+  
   <!-- Bootstrap -->
-  <script src="../libs/jquery/tether/dist/js/tether.min.js"></script>
-  <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="libs/jquery/tether/dist/js/tether.min.js"></script>
+  <script src="libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
   <!-- core -->
-  <script src="../libs/jquery/underscore/underscore-min.js"></script>
-  <script src="../libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js"></script>
-  <script src="../libs/jquery/PACE/pace.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.2/underscore.min.js"></script>
+  
+  <script src="scripts/app.js"></script>
   <script src="scripts/config.lazyload.js"></script>
-
+  <script src="js/funciones.js"></script>
   <script src="scripts/palette.js"></script>
   <script src="scripts/ui-load.js"></script>
   <script src="scripts/ui-jp.js"></script>
@@ -420,19 +433,20 @@ if((!isset($usuario))&&(!isset($supervisor))){
   <script src="scripts/ui-scroll-to.js"></script>
   <script src="scripts/ui-toggle-class.js"></script>
 
-  <script src="scripts/app.js"></script>
+ 
 
-  <!-- ajax -->
-  <script src="../libs/jquery/jquery-pjax/jquery.pjax.js"></script>
-  <script src="scripts/ajax.js"></script>
-  <!-- endbuild -->
+ 
 
   <script>
     $(document).ready(function () {
-      setTimeout(llenarCuadroPrincipal,500);
-      setInterval(() => {
-        llenarCuadroPrincipal();
+
+  setInterval(() => {
+        llenarCuadroPrincipal();        
+       
       }, 1000);
+
+      setTimeout(llenarCuadroPrincipal,500);
+      
       fechaHoy();
      
       setTimeout(() => {
@@ -441,11 +455,12 @@ if((!isset($usuario))&&(!isset($supervisor))){
           if($("#opnum"+index).text()!="--"){
            // btnid.push($("#opnum"+index).text());
             botonChat($("#opnum"+index).text())
-           // console.log(btnid); 
+            console.log($("#opnum"+index).text()); 
           }
         
         }
-      }, 600);
+        llamarChat('admin');
+      }, 1000);
     });
 
     var chatRecord = function () {
@@ -456,7 +471,7 @@ if((!isset($usuario))&&(!isset($supervisor))){
       var nboton = params;
       var boton = $('<button/>', {
         'type': 'button',
-        'class': 'editar edit-modal btn btn-info m-a',
+        'class': 'editar edit-modal btn btn-info m-a col-sm-1 col-3',
         'id': nboton,
         'onclick':'mensajes('+params+')',
         'html': '<span class="fa fa-edit"></span><span class="hidden-xs"></span>',
@@ -499,24 +514,22 @@ if((!isset($usuario))&&(!isset($supervisor))){
         $('#'+params).addClass("btn-danger");
         llamadas.push(params);
         console.log(llamadas);
-
        
-      }
-   
-      
+      }     
      
     };
    
-    var contar=[];
-    $("#enviarChat").click(function chatMultiple () {  
-         if(llamadas==""){
+  
+    $("#enviarChat").click(function chatMultiple () { 
+
+         if(llamadas=="" || $("#chat").val()==="" ){
            alert("no ha seleccionado la OP a enviar");
          }else{
 
 //--------------------------enviando chat ----------------------------------------
 
           console.log(llamadas);
-          for (let index = 0; index < llamadas.length; index++) {            
+          for (let index = 0; index < llamadas.length; index++) {          
           
           var numeroOp = llamadas[index];
           var usuario="admin";
@@ -534,19 +547,11 @@ if((!isset($usuario))&&(!isset($supervisor))){
                 mensaje:mensaje
               }
             })
-            .done(function (msg) {
-            
-              for (var i = 0; i < msg.length; i++) {
-
-            console.log(msg[i].numeroOpChat + ' ' + msg[i].mensajeChat);            
-            contar.push([msg[i].horaChat +" -> "+msg[i].usuarioChat+" - "+ msg[i].mensajeChat]+"\n");            
-             $('#chatTablero').html(contar);
-             $('#chatTablero').css({"color":"#F999EC"});
-             $("#chat").val(" "); 
-             var altura = $("#chatTablero").prop("scrollHeight");
-             $("#chatTablero").scrollTop(altura);
-              }
-         
+            .done(function (msg) {           
+              llamarChat('admin');
+              $("#chat").val(" "); 
+              
+             
             });
           } 
          }
@@ -596,7 +601,7 @@ if((!isset($usuario))&&(!isset($supervisor))){
       var TotalNc = 0;
       $.ajax({
         method: "GET",
-        url: "TraerCuadroMain.php",
+        url: "traerCuadroMain.php",
         success: function (data) {
           if (data) {
             for (let index = 0; index < data.length; index++) {

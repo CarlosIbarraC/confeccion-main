@@ -57,24 +57,24 @@ $usuario=$_SESSION['usernameS1'];
   <!-- for ios 7 style, multi-resolution icon of 152x152 -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
-  <link rel="apple-touch-icon" href="../assets/images/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
   <meta name="apple-mobile-web-app-title" content="Flatkit">
   <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
   <meta name="mobile-web-app-capable" content="yes">
-  <link rel="shortcut icon" sizes="196x196" href="../assets/images/logo.png">
+  <link rel="shortcut icon" sizes="196x196" href="assets/images/logo.png">
 
   <!-- style -->
-  <link rel="stylesheet" href="../assets/animate.css/animate.min.css" type="text/css" />
-  <link rel="stylesheet" href="../assets/glyphicons/glyphicons.css" type="text/css" />
-  <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css" type="text/css" />
-  <link rel="stylesheet" href="../assets/material-design-icons/material-design-icons.css" type="text/css" />
-
-  <link rel="stylesheet" href="../assets/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
-  <!-- build:css ../assets/styles/app.min.css -->
-  <link rel="stylesheet" href="../assets/styles/app.css" type="text/css" />
+  <link rel="stylesheet" href="assets/animate.css/animate.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/glyphicons/glyphicons.css" type="text/css" />
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/material-design-icons/material-design-icons.css" type="text/css" />
+ 
+  <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+  <!-- build:css assets/styles/app.min.css -->
+  <link rel="stylesheet" href="assets/styles/app.css" type="text/css" />
   <!-- endbuild -->
-  <link rel="stylesheet" href="../assets/styles/font.css" type="text/css" />
-  <script src="../libs/jquery/tether/dist/js/tether.min.js"></script>
+  <link rel="stylesheet" href="assets/styles/font.css" type="text/css" />
+  <script src="libs/jquery/tether/dist/js/tether.min.js"></script>
 </head>
 
 <body>
@@ -88,33 +88,32 @@ $usuario=$_SESSION['usernameS1'];
     <div class="p-a white lt box-shadow">
   
       <div class="row">
-        <div class="col-5">
+        <div class="col-12 col-sm-5">
           <div class="row">
-            <div class="col-7">
+            <div class=" col-8 col-sm-7">
               <h4 class="mb-0 text-sm">Bienvenido a Confeccion I</h4>
               <small class="text-sm text-muted">Control <strong>I </strong> Produccion en linea</small>
             </div>
-            <h4 class="mt-2  text-info text-md" id="fechaHoy">--</h4>
+            <h4 class="mt-2  text-info text-md text-right" id="fechaHoy">--</h4>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-sm-4">
           <div class="row">
             <div class="col-12 col-sm-6">
-              <h4 class="mb-0 _300">Supervisa: </h4>
-              
+              <h4 class="mb-0 _300">Supervisa: </h4>              
             </div>
             <div class="col-12 col-sm-6">
               <h4 class="text-accent" id="Usuario<?php echo $n ?>"> Usuario</h4>
             </div>
           </div>
         </div>
-        <div class="col-3">
+        <div class="col-12 col-sm-3">
           <div class="row">
             <div class="col-12 col-sm-6">
-              <h4 class="mb-0 _300 text-center">O.P: </h4>
+              <h4 class="mb-0 _300 text-left">O.P: </h4>
             </div>
             <div class="col-12 col-sm-6">
-              <h2 class="text-info text-center" id="tablero<?php echo $n ?>-OP"> --</h2>
+              <h4 class="text-info text-left" id="tablero<?php echo $n ?>-OP"> --</h4>
             </div>
           </div>
 
@@ -136,21 +135,22 @@ $usuario=$_SESSION['usernameS1'];
           <div class="h3 col-3 col-sm-2 center">
             <h2 id="suma<?php echo $n ?>" class="text-info">--</h2>
           </div>
-          <div class="clear col-sm-2 col-3">
-            <h4 class="m-0 text-xs _300">Contador<br><span class="text-xs">SAM</span></h4>
-            
-          </div>
-          <div class="h2 col-sm-2 col-3 center crono_wrapper">
-        
-            <h2 id="crono<?php echo $n ?>" class="text-info ">00:00:00</h2>
-            
-          </div>
+          
           <div class="clear col-sm-2 col-3">
             <h4 class="m-0 text-xs _300">Unidades-N.C</h4>
             <small class="text-muted">revisadas</small>
           </div>
           <div class="h3 col-sm-2 col-3 center">
             <h2 id="sumaNC<?php echo $n ?>" class="text-danger">--</h2>
+          </div>
+          <div class="clear col-sm-2 col-12">
+            <h4 class="m-0 text-xs _300">Contador<br><span class="text-xs">SAM</span></h4>
+            
+          </div>
+          <div class="h2 col-sm-2 col-12 center crono_wrapper">
+        
+            <h2 id="crono<?php echo $n ?>" class="text-info h5 ">00:00:00</h2>
+            
           </div>
         </div>
       </div>
@@ -284,8 +284,8 @@ $usuario=$_SESSION['usernameS1'];
             </div>
 
 
-            <div class="row col-8 mx-0 p-0">
-              <div class="col-6 ">
+            <div class="row col-12 col-sm-8 mx-0 p-0">
+              <div class="col-12 col-sm-6">
                 <div class="box p-a">
                   <div class="pull-left m-r p-2">
                     <span class="w-32 rounded pink-200">
@@ -308,12 +308,15 @@ $usuario=$_SESSION['usernameS1'];
                  
                 </div>
               </div>
-              <div class="col-6 ">
+              <div class="col-12 col-sm-6 ">
                 <div class="box p-a">
                   <div class="pull-left m-r p-2">
                     <span class="w-32 rounded green-200">
                       <i class="material-icons">&#xe0c9;</i>
                     </span><span class="input-group-text"> Chat</span>
+                    <span class="w-32 rounded red-600 campana">
+              <i class="material-icons">&#xe003;</i>
+            </span>
                   </div>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -350,7 +353,7 @@ $usuario=$_SESSION['usernameS1'];
                   </div>
                 </div>
               </div>
-              <div class="col-6 col-sm-4">
+              <div class="col-12 col-sm-4">
                 <div class="box p-a">
                   <div class="pull-left m-r">
                     <span class="w-40 rounded  deep-purple-300">
@@ -371,26 +374,26 @@ $usuario=$_SESSION['usernameS1'];
           <div class="row box p-a ">
 
 
-            <div class="col-4 col-sm-1 d-flex">
-              <button class=" mr-1 btn btn-md  green-400" id="pausar<?php echo $n ?>"><span id="end<?php echo $n ?>">Start</span></button>
+            <div class="col-6 col-sm-1 mt-3 mt-sm-0 justify-content-center d-flex">
+              <button class=" mr-1 btn btn-md mp-2 green-400" id="pausar<?php echo $n ?>"><span id="end<?php echo $n ?>">Start</span></button>
             </div>
-            <div class="col-4 col-sm-1 pl-2 d-flex">
-              <button class=" mr-1 btn btn-sm yellow-400" id="detener<?php echo $n ?>">Pausa</button>
+            <div class="col-6 col-sm-1 mt-3 justify-content-center d-flex">
+              <button class=" mr-1 btn mp-2 btn-sm yellow-400" id="detener<?php echo $n ?>">Pausa</button>
             </div>
-            <div class="col-4 col-sm-2 justify-content-center d-flex">
+            <div class="col-6 col-sm-2 mt-3 justify-content-center d-flex">
               <button class="mr-1 btn  pink-400"id="TelaImp<?php echo $n ?>">RTA</button>
             </div>
-            <div class="col-4 col-sm-2 d-flex justify-content-center">
+            <div class="col-6 col-sm-2 mt-3 d-flex justify-content-center">
               <button class="btn  cyan-600"id="sinConf<?php echo $n ?>">S.C.</button>
             </div>
-            <div class="col-4 col-sm-2 mt-3 mt-sm-0 d-flex justify-content-center">
+            <div class="col-6 col-sm-2 mt-3 mt-sm-0 d-flex justify-content-center">
               <button class="mr-1 btn  deep-purple-300" id="Segun<?php echo $n ?>" >2.da.</button>
             </div>
-            <div class="col-4 col-sm-2 mt-3 mt-sm-0 d-flex justify-content-center">
+            <div class="col-6 col-sm-2 mt-3 mt-sm-0 d-flex justify-content-center">
               <button class="mr-1 btn  purple-300" id="NoConf<?php echo $n ?>" >N.C.</button>
             </div>
-            <div class="col-4 col-sm-2 mt-3 mt-sm-0 d-flex justify-content-center">
-              <button class="btn  green-300" type="a" id="lanzar<?php echo $n ?>" ><i
+            <div class="col-12 col-sm-2 mt-3 mt-sm-0 d-flex justify-content-center">
+              <button class="btn sm-btn-s green-300" type="a" id="lanzar<?php echo $n ?>" ><i
                   class="material-icons ">&#xe87c;</i> OK</button>
                   
             </div>
@@ -398,6 +401,7 @@ $usuario=$_SESSION['usernameS1'];
 
 
         </div>
+      
         <?php 
  require('switchColor.php');
  ?>
@@ -407,8 +411,9 @@ $usuario=$_SESSION['usernameS1'];
 
      
 
-      <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-
+      <script type='text/javascript' src="libs/jquery/jquery/dist/jquery.js"></script>"></script>
+      <script src="js/funciones.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.2/underscore.min.js"></script>
         <script>
           
           $(document).ready(function () {
@@ -416,15 +421,25 @@ $usuario=$_SESSION['usernameS1'];
             $('#avisoCerrado'+<?php echo $n; ?>).removeClass('lime-300');
             agregarOP(usuario);
             fechaHoy();
+            
+            
             $.ajaxSetup({"cache":false});
               setTimeout(() => {
                 insertarDatosOp();
                 
                
-                }, 200);
+                }, 600);
+                
+                  setTimeout(() => {
+               var op=$("#tablero<?php echo $n;?>-OP").text();
+                llamarChatUsuario(op);             
+                }, 800);
 
                 var prueba=$('#end'+<?php echo $n;?>).text();
-               
+               setInterval(() => {
+                var op=$("#tablero<?php echo $n;?>-OP").text();
+                llamarChatUsuario(op); 
+               }, 2000);
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxx                                      funciones de conteo                                xxxxxxxxxxx
@@ -608,9 +623,10 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
           function insertarDatosOp() {
           
            var numeroOp = $("#tablero<?php echo $n; ?>-OP").text();
+           console.log(numeroOp);
            $.ajax({
                method: "POST",
-               url: "insertarDatosOp.php",
+               url: "insertarDatosOP.php",
                data: {
                  numeroOp: numeroOp
                }
@@ -882,7 +898,45 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
          
             }); 
          
-                })
+                });
+
+                var contar=[];
+                var largo=0;
+
+                function llamarChatUsuario(parametro) {
+  console.log(parametro);
+$.ajax({
+ method: "POST",
+ url: "llenarChat.php",
+ data: {     
+   parametro:parametro     
+ }
+})
+.done(function (msg) {
+  if(largo!=msg.length){
+    console.log('nuevo mensaje');
+    console.log(largo,"-",msg.length);
+    setTimeout(() => {
+      
+    }, 6000);
+    for (var i = 0; i < msg.length; i++) {
+
+console.log(msg[i].numeroOpChat + ' ' + msg[i].mensajeChat);            
+contar.push([msg[i].horaChat +" -> "+msg[i].usuarioChat+" - "+ msg[i].mensajeChat]+"\n");            
+ $('#chatTablero<?php echo $n; ?>').html(contar);
+ $('#chatTablero<?php echo $n; ?>').css({"color":"#F999EC"});
+ $('#chat<?php echo $n; ?>').val(" "); 
+ var altura = $('#chatTablero<?php echo $n; ?>').prop("scrollHeight");
+ $('#chatTablero<?php echo $n; ?>').scrollTop(altura);
+  }
+  }
+largo=msg.length;
+ 
+    
+   
+ 
+});
+}        
 </script>
 
   
@@ -890,16 +944,15 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
      
 
       <!-- jQuery -->
-      <script src="../libs/jquery/jquery/dist/jquery.js"></script>
-      <script src="../js/funciones.js">
-        <!-- Bootstrap 
-        -->
+      <script src="libs/jquery/jquery/dist/jquery.js"></script>
+      <script src="js/funciones.js"></script>
+        <!--  Bootstrap -->
       
-      <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
       <!-- core -->
-      <script src="../libs/jquery/underscore/underscore-min.js"></script>
-      <script src="../libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js"></script>
-      <script src="../libs/jquery/PACE/pace.min.js"></script>
+    
+      <script src="libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+      <script src="libs/jquery/PACE/pace.min.js"></script>
 
       <script src="scripts/config.lazyload.js"></script>
 
@@ -917,7 +970,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       <script src="scripts/app.js"></script>
 
       <!-- ajax -->
-      <script src="../libs/jquery/jquery-pjax/jquery.pjax.js"></script>
+      <script src="libs/jquery/jquery-pjax/jquery.pjax.js"></script>
       <script src="scripts/ajax.js"></script>
       <!-- endbuild -->
 

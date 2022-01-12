@@ -32,6 +32,11 @@ button {
   border:1px solid #f8f8f8;
   margin: 10px;
 }
+.campana{
+  display: none !important;
+}
+
+
 pre {
   color: inherit;
   background-color: #f8f8f8;

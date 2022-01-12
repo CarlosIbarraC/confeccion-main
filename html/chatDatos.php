@@ -18,9 +18,18 @@ if($conexion->connect_error){
 $sql="INSERT INTO `chat`( `numeroOpChat`, `usuarioChat`, `horaChat`, `mensajeChat`) VALUES ('$numeroOp','$usuario','$hora','$mensaje')";
 $consulta=mysqli_query($conexion,$sql);
 
-$sqlC="SELECT * FROM `chat` WHERE `numeroOpChat`='$numeroOp'";
-$consultaC=mysqli_query($conexion,$sqlC);
-$respuesta =[];
+if($usuario=="admin"){
+    $sqlC="SELECT * FROM `chat`";
+    $consultaC=mysqli_query($conexion,$sqlC);
+    $respuesta =[];
+
+}else{
+    $sqlC="SELECT * FROM `chat` WHERE `numeroOpChat`='$numeroOp'";
+    $consultaC=mysqli_query($conexion,$sqlC);
+    $respuesta =[];
+
+}
+
 
 while($array=$consultaC->fetch_assoc()){
 

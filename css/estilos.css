@@ -18,6 +18,10 @@ a{
     background: #242424;
     color:#1d544e;
 }
+span .campana{
+    display: none;
+}
+
 .btn-menu .icono{
     float: right;
     display: none;
@@ -132,5 +136,11 @@ select option{
     .contenedor-menu .menu{
         display: none;
     }
+    html {
+        font-size: 1rem;
+      }
     
 }
+
+  
+ 

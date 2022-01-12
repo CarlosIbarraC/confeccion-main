@@ -2,15 +2,22 @@
 
 function  fechaControl(){   
    const hoy = new Date();
-   const fecha = $('#fechaOp').val();
+   const fecha =  $('#fechaOp').val();
    var dia =  hoy.getDate();
+   var mes = hoy.getMonth()+1;
    var n;
+   var r;
    if (dia<10){
      n = "0"+dia.toString();
    }else{
       n=dia;
-   }   
-   const hoyFormato=hoy.getFullYear()+"-"+(parseInt(hoy.getMonth())+1)+"-"+n;
+   }  
+   if (mes<10){
+    r = "0"+mes.toString();
+  }else{
+     r=mes;
+  }  
+   const hoyFormato=hoy.getFullYear()+"-"+(r)+"-"+n;
    console.log(fecha);
    console.log(hoyFormato);
     if(fecha!=""){
@@ -71,14 +78,14 @@ function  fechaControl(){
               descanso=descanso.substr(-2);
               descanso=parseInt(descanso);
               const dateTimeE = new Date(horaE).getTime();
-                const dateTimeS = new Date(horaS).getTime();
-                const timestampE = Math.floor(dateTimeE / 1000);
-                const timestampS = Math.floor(dateTimeS / 1000);
-                var diferencia=timestampS-timestampE;             
-                var minT=(diferencia/60-descanso);                
-                var TxExp=minT;
-                var uxHora=(unidades/minT*60).toFixed();
-                var MxExp=Math.floor(minT/operarios);
+              const dateTimeS = new Date(horaS).getTime();
+              const timestampE = Math.floor(dateTimeE / 1000);
+              const timestampS = Math.floor(dateTimeS / 1000);
+              var diferencia=timestampS-timestampE;             
+              var minT=(diferencia/60-descanso);                
+              var TxExp=minT;
+              var uxHora=(unidades/minT*60).toFixed();
+              var MxExp=Math.floor(minT/operarios);
               $('#tablero'+n+'-OP').text(tableroOP);             
               $('#Referencia'+n).text(referencia);
               $('#Estampado'+n).text(estampado);
@@ -91,19 +98,38 @@ function  fechaControl(){
               $('#horaS'+n).text(horas);
               $('#descanso'+n).text(descanso+" min");
               $('#operarios'+n).text(operarios );
-              $('#Usuario'+n).text(asignacion );
-
-           
-               
-           
+              $('#Usuario'+n).text(asignacion );         
              
              
-          });
-     
+          });    
        
   } 
+var contar=[];
+ function llamarChat(parametro) {
+     console.log(parametro);
+  $.ajax({
+    method: "POST",
+    url: "llenarChat.php",
+    data: {     
+      parametro:parametro     
+    }
+  })
+  .done(function (msg) {
+    for (var i = 0; i < msg.length; i++) {
 
-  
+      console.log(msg[i].numeroOpChat + ' ' + msg[i].mensajeChat);            
+      contar.push([msg[i].horaChat +" -> "+msg[i].usuarioChat+" - "+ msg[i].mensajeChat]+"\n");            
+       $('#chatTablero').html(contar);
+       $('#chatTablero').css({"color":"#F999EC"});
+       $("#chat").val(" "); 
+       var altura = $("#chatTablero").prop("scrollHeight");
+       $("#chatTablero").scrollTop(altura);
+        }
+
+
+  });
+ } 
+ 
 
  
   
