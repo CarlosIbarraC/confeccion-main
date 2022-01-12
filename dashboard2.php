@@ -439,7 +439,7 @@ $usuario=$_SESSION['usernameS1'];
                setInterval(() => {
                 var op=$("#tablero<?php echo $n;?>-OP").text();
                 llamarChatUsuario(op); 
-               }, 2000);
+               }, 3000);
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxx                                      funciones de conteo                                xxxxxxxxxxx
@@ -871,6 +871,9 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
           hora=hora.getHours()+":"+hora.getMinutes();
           var mensaje=$("#chat<?php echo $n; ?>").val();
           console.log(numeroOp,usuario,hora,mensaje);
+          if( $("#chat<?php echo $n; ?>").val()===" " ){
+           alert("no ha seleccionado la OP a enviar");
+         }else{
            $.ajax({
               method: "POST",
               url: "chatDatos.php",
@@ -882,26 +885,16 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
               }
             })
             .done(function (msg) {
-            
-              for (var i = 0; i < msg.length; i++) {
-            console.log(msg[i].numeroOpChat + ' ' + msg[i].mensajeChat);
+              
+              $("#chat<?php echo $n; ?>").val(msg);
              
-            
-             contar.push([msg[i].horaChat +" -> "+msg[i].usuarioChat+" - "+ msg[i].mensajeChat]+"\n");
-            
-             $('#chatTablero'+<?php echo $n; ?>).html(contar);
-             $('#chatTablero'+<?php echo $n; ?>).css({"color":"#F999EC"});
-             $("#chat<?php echo $n; ?>").val(" "); 
-             var altura = $("#chatTablero"+<?php echo $n; ?>).prop("scrollHeight");
-             $("#chatTablero"+<?php echo $n; ?>).scrollTop(altura);
-              }
          
             }); 
-         
+          }
                 });
 
                 var contar=[];
-                var largo=0;
+                var largo=1;
 
                 function llamarChatUsuario(parametro) {
   console.log(parametro);
@@ -913,12 +906,10 @@ $.ajax({
  }
 })
 .done(function (msg) {
-  if(largo!=msg.length){
+  if(largo!=msg.length || largo==1){
     console.log('nuevo mensaje');
     console.log(largo,"-",msg.length);
-    setTimeout(() => {
-      
-    }, 6000);
+   
     for (var i = 0; i < msg.length; i++) {
 
 console.log(msg[i].numeroOpChat + ' ' + msg[i].mensajeChat);            

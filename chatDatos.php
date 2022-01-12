@@ -19,6 +19,6 @@ $sql="INSERT INTO chat( numeroOpChat, usuarioChat, horaChat, mensajeChat) VALUES
 $consulta=mysqli_query($conexion,$sql);
 
 };
-echo "carlos";
+echo "enviado";
 
 ?>

@@ -442,7 +442,7 @@ if((!isset($usuario))&&(!isset($supervisor))){
 
   setInterval(() => {
         llenarCuadroPrincipal();        
-       
+        llamarChat('admin');
       }, 1000);
 
       setTimeout(llenarCuadroPrincipal,500);

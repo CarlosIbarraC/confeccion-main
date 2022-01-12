@@ -105,8 +105,9 @@ function  fechaControl(){
        
   } 
 var contar=[];
+var largo=0;
  function llamarChat(parametro) {
-     console.log(parametro);
+     
   $.ajax({
     method: "POST",
     url: "llenarChat.php",
@@ -115,6 +116,8 @@ var contar=[];
     }
   })
   .done(function (msg) {
+    if(largo!=msg.length){
+
     for (var i = 0; i < msg.length; i++) {
 
       console.log(msg[i].numeroOpChat + ' ' + msg[i].mensajeChat);            
@@ -125,8 +128,8 @@ var contar=[];
        var altura = $("#chatTablero").prop("scrollHeight");
        $("#chatTablero").scrollTop(altura);
         }
-
-
+      }
+      largo=msg.length;
   });
  } 
  
